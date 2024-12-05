@@ -176,6 +176,23 @@
     #imageSlider img {
         scroll-snap-align: center;
     }
+    /* Nuevos estilos para mejorar la responsividad */
+    @media (min-width: 1024px) {
+        .product-slider {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+    }
+    @media (min-width: 1280px) {
+        .container {
+            max-width: 1200px;
+        }
+    }
+    .modal-content {
+        max-height: 90vh;
+        overflow-y: auto;
+    }
     </style>
 </head>
 <body class="flex min-h-screen flex-col font-sans bg-cream">
@@ -284,16 +301,16 @@
         </div>
     </div>
 
-    <main>
+    <main class="flex-grow">
         <!-- Hero Banner -->
-        <div id="hero" class="relative w-full h-0 pb-[56.25%] overflow-hidden">
+        <div id="hero" class="relative w-full h-0 pb-[56.25%] md:pb-[40%] lg:pb-[30%] overflow-hidden">
             <!-- Las imágenes se insertarán dinámicamente aquí -->
         </div>
         <!-- Featured Collection Section -->
-        <section class="bg-gradient-to-r from-cream to-ivory py-8 md:py-16 mb-8 md:mb-16">
+        <section class="bg-gradient-to-r from-cream to-ivory py-8 md:py-12">
             <div class="container mx-auto px-4">
                 <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="space-y-4 md:space-y-6">
+                    <div class="space-y-4">
                         <h2 class="text-3xl md:text-4xl font-bold text-gray-800 font-serif">¡NUEVA COLECCIÓN DE TEXTILES!</h2>
                         <p class="text-lg md:text-xl text-gray-600">Descubre los nuevos ingresos</p>
                     </div>
@@ -305,24 +322,30 @@
         </section>
 
         <!-- Product Sections -->
-        <section id="velas" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">VELAS</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="velasContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="velas" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">VELAS</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="velasContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="aromas" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">AROMAS</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="aromasContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="aromas" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">AROMAS</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="aromasContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
     
-        <section id="ceramica" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CERÁMICA</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="ceramicaContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="ceramica" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CERÁMICA</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="ceramicaContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
@@ -332,52 +355,66 @@
             <p id="advertisingMessage" class="text-2xl md:text-3xl font-bold mb-4 relative z-10 text-white font-serif"></p>
         </div>
 
-        <section id="textiles" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">TEXTILES</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="textilesContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="textiles" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">TEXTILES</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="textilesContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="accesorios" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">ACCESORIOS</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="accesoriosContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="accesorios" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">ACCESORIOS</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="accesoriosContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="cubre_sommier" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CUBRE SOMMIER</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="cubre_sommierContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="cubre_sommier" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CUBRE SOMMIER</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="cubre_sommierContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="cortinas_interior" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CORTINAS DE INTERIOR</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="cortinas_interiorContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="cortinas_interior" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">CORTINAS DE INTERIOR</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="cortinas_interiorContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="almohadones" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">ALMOHADONES</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="almohadonesContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="almohadones" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">ALMOHADONES</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="almohadonesContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="manteles" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">MANTELES</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="mantelesContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="manteles" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">MANTELES</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="mantelesContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
 
-        <section id="box" class="container mx-auto px-4 py-8 md:py-12">
-            <h2 class="mb-6 md:mb-8 text-center text-2xl md:text-3xl font-bold text-primary font-serif">BOX</h2>
-            <div class="product-slider flex overflow-x-auto scrollbar-hide gap-4 md:gap-6" id="boxContainer">
-                <!-- Products will be dynamically inserted here -->
+        <section id="box" class="py-8 md:py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="mb-6 text-center text-2xl md:text-3xl font-bold text-primary font-serif">BOX</h2>
+                <div class="product-slider flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 overflow-x-auto md:overflow-x-visible scrollbar-hide" id="boxContainer">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
             </div>
         </section>
         
@@ -401,7 +438,7 @@
         </div>
 
         <!-- Features Section with Icons -->
-        <section class="bg-white py-8 md:py-12 mb-8 md:mb-16">
+        <section class="bg-white py-8 md:py-12">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     <div class="text-center">
@@ -431,9 +468,9 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary text-white py-8 md:py-16">
+    <footer class="bg-primary text-white py-8 md:py-12">
         <div class="container mx-auto px-4">
-            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <div>
                     <img src="img/logo.png" alt="Mon Amour Textil Logo" class="h-16 md:h-20 w-auto mb-4">
                     <p class="text-sm text-gray-200">
@@ -470,31 +507,12 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4 font-serif">Síguenos</h3>
-                    <div class="flex space-x-4 mb-4">
-                        <a href="#" class="text-gray-200 hover:text-white transition-colors">
-                            <i class="fab fa-facebook h-6 w-6"></i>
-                        </a>
-                        <a href="#" class="text-gray-200 hover:text-white transition-colors">
-                            <i class="fab fa-instagram h-6 w-6"></i>
-                        </a>
-                        <a href="#" class="text-gray-200 hover:text-white transition-colors">
-                            <i class="fab fa-pinterest h-6 w-6"></i>
-                        </a>
-                    </div>
-                    <h4 class="text-sm font-semibold mb-2 font-serif">Suscríbete a nuestro newsletter</h4>
-                    <form class="flex flex-col sm:flex-row gap-2">
-                        <input type="email" placeholder="Tu email" class="flex-grow px-3 py-2 text-gray-900 rounded-md focus:outline-none">
-                        <button type="submit" class="bg-white text-primary px-4 py-2 rounded-md hover:bg-gray-100 transition-colors">Suscribir</button>
-                    </form>
-                </div>
             </div>
             <div class="mt-8 border-t border-gray-700 pt-8">
                 <h3 class="text-lg font-semibold mb-4 font-serif">Políticas</h3>
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
                     <li><a href="#" class="text-sm text-gray-200 hover:text-white transition-colors">Políticas de Privacidad y Cookies</a></li>
-                    <li><a href="#" class="text-sm text-gray-200 hover:text-white transition-colors">Términos y Condiciones de Uso</a></li>
+                    <li><a href="#" class="text-sm text-li><a href="#" class="text-sm text-gray-200 hover:text-white transition-colors">Términos y Condiciones de Uso</a></li>
                     <li><a href="#" class="text-sm text-gray-200 hover:text-white transition-colors">Política de Garantía</a></li>
                     <li><a href="#" class="text-sm text-gray-200 hover:text-white transition-colors">Políticas de Envío</a></li>
                 </ul>
