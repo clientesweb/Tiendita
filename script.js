@@ -75,52 +75,30 @@ function renderProducts() {
   categories.forEach(category => {
     const container = productContainers[category];
     if (container && products[category]) {
-      container.innerHTML = products[category].map(product => `
-  <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative">
-    <div class="p-4">
-      <div class="relative mb-4 aspect-square">
-        <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
-          style="background-color: #D4C098; color: #848071;">
-          10% OFF
-        </div>
-        <div class="product-image-slider overflow-hidden">
-          <div class="flex transition-transform duration-300 ease-in-out">
-            ${product.images.map(image => `
-              <img src="${image}" alt="${product.name}" class="object-contain w-full h-full flex-shrink-0">
-            `).join('')}
+      container.innerHTML = `<div class="product-slider flex overflow-x-auto space-x-4 pb-4">
+        ${products[category].map(product => `
+          <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative">
+            <div class="p-4">
+              <div class="relative mb-4 aspect-square">
+                <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
+                  style="background-color: #D4C098; color: #848071;">
+                  10% OFF
+                </div>
+                <img src="${product.images[0]}" alt="${product.name}" class="object-contain w-full h-full">
+              </div>
+              <h3 class="text-sm font-medium line-clamp-2 font-serif">${product.name}</h3>
+              ${renderProductPrice(product, category)}
+              ${renderProductOptions(product, category)}
+              <button class="w-full mt-2 bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors" onclick="openProductModal('${product.id}', '${category}')">
+                Ver detalles
+              </button>
+            </div>
           </div>
-        </div>
-        ${product.images.length > 1 ? `
-          <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1">
-            ${product.images.map((_, index) => `
-              <button class="w-2 h-2 rounded-full bg-gray-300 focus:outline-none slider-dot" data-index="${index}"></button>
-            `).join('')}
-          </div>
-        ` : ''}
-      </div>
-      <h3 class="text-sm font-medium line-clamp-2 font-serif">${product.name}</h3>
-      ${renderProductPrice(product, category)}
-      ${renderProductOptions(product, category)}
-      <button class="w-full mt-2 bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors" onclick="openProductModal('${product.id}', '${category}')">
-        Ver detalles
-      </button>
-    </div>
-  </div>
-`).join('');
-
-      // Add event listeners for slider dots
-      container.querySelectorAll('.slider-dot').forEach(dot => {
-        dot.addEventListener('click', function() {
-          const card = this.closest('.product-card');
-          const slider = card.querySelector('.product-image-slider > div');
-          const index = this.dataset.index;
-          slider.style.transform = `translateX(-${index * 100}%)`;
-          card.querySelectorAll('.slider-dot').forEach(d => d.classList.remove('bg-primary'));
-          this.classList.add('bg-primary');
-        });
-      });
+        `).join('')}
+      </div>`;
     }
   });
+  initializeProductSliders();
 }
 
 function renderProductPrice(product, category) {
@@ -613,7 +591,7 @@ ALIAS: MON.AMOUR.TEXTIL
 CUIT/CUIL: 27-37092938-1
     `.trim();
     navigator.clipboard.writeText(bankDetails).then(() => {
-      this.textContent = 'Datos copiados';
+      this.textContent ='Datos copiados';
       setTimeout(() => {
         this.textContent = 'Copiar datos bancarios';
       }, 2000);
@@ -734,6 +712,61 @@ function showAdSlide(index) {
 function nextAdSlide() {
   currentAdSlide = (currentAdSlide + 1) % adSlides.length;
   showAdSlide(currentAdSlide);
+}
+
+function initializeProductSliders() {
+  const sliders = document.querySelectorAll('.product-slider');
+  sliders.forEach(slider => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 3;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+
+    // Touch events for mobile
+    slider.addEventListener('touchstart', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.touches[0].pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('touchend', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('touchmove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.touches[0].pageX - slider.offsetLeft;
+      const walk = (x - startX) * 3;
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  });
 }
 
 // Event Listeners
@@ -878,6 +911,7 @@ ${text}`);
   });
 
   loadProducts();
+  initializeProductSliders();
   updateBanner();
   setInterval(updateBanner, 5000);
 
