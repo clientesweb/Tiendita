@@ -338,32 +338,32 @@
       "description": "Cubresomier clásico confeccionado en algodón y su base en poliéster. Tiene una base plana que queda entre el colchón y el somier lo cual lo sujeta. Color crudo. Medida de alto: 30 cm.",
       "sizes": [
         {
-          "name": "Twin",
+          "name": "Twin (1 M A x 2 M L)",
           "price": 66500,
           "dimensions": "1 M A x 2 M L"
         },
         {
-          "name": "King",
+          "name": "King (1.80 M A x 2 M L)",
           "price": 81300,
           "dimensions": "1.80 M A x 2 M L"
         },
         {
-          "name": "Queen",
+          "name": "Queen (1.60 M A x 2 M L)",
           "price": 79900,
           "dimensions": "1.60 M A x 2 M L"
         },
         {
-          "name": "1 Plaza",
+          "name": "1 Plaza (0.90 A x 1.90 L)",
           "price": 62000,
           "dimensions": "0.90 A x 1.90 L"
         },
         {
-          "name": "2 Plazas",
+          "name": "2 Plazas (1.40 x 1.90 M L)",
           "price": 72000,
           "dimensions": "1.40 x 1.90 M L"
         },
         {
-          "name": "Super King",
+          "name": "Super King (2 M A x 2 M L)",
           "price": 89000,
           "dimensions": "2 M A x 2 M L"
         }
@@ -376,32 +376,32 @@
       "description": "Cubresomier con su volado confeccionado en gasa de algodón, terminado en puntilla y su base en poliéster. Color crudo. Medida de alto: 30 cm.",
       "sizes": [
         {
-          "name": "Twin",
+          "name": "Twin (1 M A x 2 M L)",
           "price": 86500,
           "dimensions": "1 M A x 2 M L"
         },
         {
-          "name": "King",
+          "name": "King (1.80 M A x 2 M L)",
           "price": 101200,
           "dimensions": "1.80 M A x 2 M L"
         },
         {
-          "name": "Queen",
+          "name": "Queen (1.60 M A x 2 M L)",
           "price": 99000,
           "dimensions": "1.60 M A x 2 M L"
         },
         {
-          "name": "1 Plaza",
+          "name": "1 Plaza (0.90 A x 1.90 L)",
           "price": 82000,
           "dimensions": "0.90 A x 1.90 L"
         },
         {
-          "name": "2 Plazas",
+          "name": "2 Plazas (1.40 x 1.90 M L)",
           "price": 92000,
           "dimensions": "1.40 x 1.90 M L"
         },
         {
-          "name": "Super King",
+          "name": "Super King (2 M A x 2 M L)",
           "price": 109000,
           "dimensions": "2 M A x 2 M L"
         }
@@ -414,32 +414,32 @@
       "description": "Cubresomier confeccionado en algodón con una tabla encontrada en ambos extremos reguladas con un moño y su base en poliéster. Color crudo. Medida de alto: 30 cm.",
       "sizes": [
         {
-          "name": "Twin",
+          "name": "Twin (1 M A x 2 M L)",
           "price": 76500,
           "dimensions": "1 M A x 2 M L"
         },
         {
-          "name": "King",
+          "name": "King (1.80 M A x 2 M L)",
           "price": 91200,
           "dimensions": "1.80 M A x 2 M L"
         },
         {
-          "name": "Queen",
+          "name": "Queen (1.60 M A x 2 M L)",
           "price": 89000,
           "dimensions": "1.60 M A x 2 M L"
         },
         {
-          "name": "1 Plaza",
+          "name": "1 Plaza (0.90 A x 1.90 L)",
           "price": 72000,
           "dimensions": "0.90 A x 1.90 L"
         },
         {
-          "name": "2 Plazas",
+          "name": "2 Plazas (1.40 x 1.90 M L)",
           "price": 82000,
           "dimensions": "1.40 x 1.90 M L"
         },
         {
-          "name": "Super King",
+          "name": "Super King (2 M A x 2 M L)",
           "price": 99000,
           "dimensions": "2 M A x 2 M L"
         }
@@ -493,13 +493,13 @@
     },
     {
       "id": 2,
-      "name": "Cortinas con Volado Triple 140m",
+      "name": "Cortinas con Volado Triple",
       "images": ["img/cortinas-volado-triple-140m.jpg", "img/cortinas-volado-triple-140m-2.jpg"],
-      "description": "Cortinas con faldón confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 1.40 ancho cada uno. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "description": "Cortinas con faldón confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
       "confection_time": "7 / 10 días",
       "recommendations": [
         "Medi el ancho de tu ventana y la altura desde el barral hasta el piso.",
-        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "Estas medidas se adaptan a ventanas de hasta 2.20 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
         "¡Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos!"
       ],
       "sizes": [
@@ -517,27 +517,7 @@
           "name": "1.40m x 2.50m",
           "price": 110473,
           "dimensions": "1.40m de ancho x 2.50m de alto"
-        }
-      ],
-      "options": [
-        {
-          "name": "Tipo de sujeción",
-          "choices": ["Pasa barral oculto", "Tiras pasa barral"]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "Cortinas con Volado Triple 2m",
-      "images": ["img/cortinas-volado-triple-2m.jpg", "img/cortinas-volado-triple-2m-2.jpg"],
-      "description": "Cortinas con faldón confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 2m ancho cada uno. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
-      "confection_time": "7 / 10 días",
-      "recommendations": [
-        "Medi el ancho de tu ventana y la altura desde el barral hasta el piso.",
-        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
-        "¡Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos!"
-      ],
-      "sizes": [
+        },
         {
           "name": "2m x 2.10m",
           "price": 121352,
@@ -562,7 +542,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "name": "Cortinas para Riel de Gasa",
       "images": ["img/cortinas-riel-gasa.jpg", "img/cortinas-riel-gasa-2.jpg"],
       "description": "Cortinas para riel confeccionadas en gasa de 100% algodón. Color crudo. Cabezal doble pellizcos (incluye los ganchos para colgar). Medidas: 2 paños de 0.75 metros de ancho x 2.10 de altura c/u. Sirven para cubrir un riel de 1.50 metros. Son livianas y tienen una hermosa caída. Visten tus ventanas y a la vez permiten el paso de la luz.",
@@ -582,14 +562,14 @@
       ]
     },
     {
-      "id": 5,
-      "name": "Cortinas de Lienzo 140m",
+      "id": 4,
+      "name": "Cortinas de Lienzo",
       "images": ["img/cortinas-lienzo-140m.jpg", "img/cortinas-lienzo-140m-2.jpg"],
-      "description": "Cortinas clásicas confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 1.40 de ancho. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "description": "Cortinas clásicas confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
       "confection_time": "7 / 10 días",
       "recommendations": [
         "Medi el ancho de tu ventana y la altura desde el barral al piso.",
-        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "Estas medidas se adaptan a ventanas de hasta 2.20 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
         "Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos."
       ],
       "sizes": [
@@ -607,27 +587,7 @@
           "name": "1.40m x 2.50m",
           "price": 83490,
           "dimensions": "1.40m de ancho x 2.50m de alto"
-        }
-      ],
-      "options": [
-        {
-          "name": "Tipo de sujeción",
-          "choices": ["Pasa barral oculto", "Tiras pasa barral"]
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "Cortinas de Lienzo 2m",
-      "images": ["img/cortinas-lienzo-2m.jpg", "img/cortinas-lienzo-2m-2.jpg"],
-      "description": "Cortinas clásicas confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 2m de ancho. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
-      "confection_time": "7 / 10 días",
-      "recommendations": [
-        "Medi el ancho de tu ventana y la altura desde el barral al piso.",
-        "Estas medidas se adaptan a ventanas de hasta 2.20 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
-        "Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos."
-      ],
-      "sizes": [
+        },
         {
           "name": "2m x 2.10m",
           "price": 89700,
@@ -775,3 +735,4 @@
     }
   ]
 }
+
