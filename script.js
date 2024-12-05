@@ -947,4 +947,3 @@ ${text}`);
 });
 
 console.log("Script loaded successfully!");
-
