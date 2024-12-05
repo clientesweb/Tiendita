@@ -910,4 +910,14 @@ ${text}`);
 });
 
 console.log("Script loaded successfully!");
+      content.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    });
+  });
+
+  // Remove preloader
+  document.getElementById('preloader').style.display = 'none';
+});
+
+console.log("Script loaded successfully!");
 
