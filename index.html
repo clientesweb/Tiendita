@@ -666,35 +666,6 @@
         </div>
     </div>
 
-    <!-- Product Card Template -->
-    <template id="productCardTemplate">
-        <div class="product-card bg-white rounded-lg shadow-md overflow-hidden flex flex-col" style="min-width: 250px; max-width: 300px;">
-            <div class="product-image-slider relative overflow-hidden" style="height: 200px;">
-                <div class="image-container flex transition-transform duration-300 ease-in-out">
-                    <!-- Images will be dynamically inserted here -->
-                </div>
-                <button class="slider-arrow left-arrow absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hidden">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="slider-arrow right-arrow absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 hidden">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-            <div class="p-4 flex-grow flex flex-col justify-between">
-                <div>
-                    <h3 class="text-lg font-semibold mb-2 product-name"></h3>
-                    <p class="text-gray-600 text-sm mb-4 product-description"></p>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span class="text-primary font-bold product-price"></span>
-                    <button class="add-to-cart bg-primary text-white px-4 py-2 rounded hover:bg-primary-dark transition-colors">
-                        Agregar al carrito
-                    </button>
-                </div>
-            </div>
-        </div>
-    </template>
-
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://sdk.mercadopago.com/js/v2"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
