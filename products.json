@@ -1,0 +1,746 @@
+{
+  "velas": [
+    {
+      "id": 1,
+      "name": "Vitre",
+      "price": 12300,
+      "image": "img/velas1.png",
+      "description": "Envase de vidrio con 100gr de cera de soja aromatizada"
+    },
+    {
+      "id": 2,
+      "name": "Conques",
+      "price": 11270,
+      "image": "img/dinan.jpg",
+      "description": "Envase reutilizable con 70 gr de cera de soja aromatizada"
+    },
+    {
+      "id": 3,
+      "name": "Lottie pequeño",
+      "price": 7360,
+      "image": "img/lottie-pequeno.jpg",
+      "description": "Cuenco de 8cm de diámetro reutilizable de madera con 100 gr de cera de soja aromatizada"
+    },
+    {
+      "id": 4,
+      "name": "Dinan",
+      "price": 17940,
+      "image": "img/conques.jpg",
+      "description": "Envase de vidrio con tapa con 200gr de cera de soja aromatizada"
+    },
+    {
+      "id": 5,
+      "name": "Lottie mediano",
+      "price": 9660,
+      "image": "img/lottie-mediano.jpg",
+      "description": "Cuenco de 12cm de diámetro reutilizable de madera con 200 gr de cera de soja aromatizada"
+    },
+    {
+      "id": 6,
+      "name": "Jolie con flor",
+      "price": 8970,
+      "image": "img/jolie-con-flor.jpg",
+      "description": "Cuenco reutilizable de madera con 150 gr de cera de soja aromatizada"
+    },
+    {
+      "id": 7,
+      "name": "Yanis grande",
+      "price": 6050,
+      "image": "img/yanis-grande.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 7cm x 7cm"
+    },
+    {
+      "id": 8,
+      "name": "Yanis pequeña",
+      "price": 2875,
+      "image": "img/yanis-pequena.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 4cm x 4 cm"
+    },
+    {
+      "id": 9,
+      "name": "Selene",
+      "price": 4370,
+      "image": "img/selene.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 8cm de base x 4cm de alto"
+    },
+    {
+      "id": 10,
+      "name": "Teva 1",
+      "price": 4140,
+      "image": "img/teva-1.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 10 cm alto x 5cm ancho"
+    },
+    {
+      "id": 11,
+      "name": "Teva 2",
+      "price": 4140,
+      "image": "img/teva-2.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 10 cm de alto x 7 cm de ancho"
+    },
+    {
+      "id": 12,
+      "name": "Teva 3",
+      "price": 4140,
+      "image": "img/teva-3.jpg",
+      "description": "Vela de cera de soja aromatizada. Medidas: 8 cm de alto x 7 cm de ancho"
+    },
+    {
+      "id": 13,
+      "name": "Bombones marie",
+      "price": 2760,
+      "image": "img/bombones-marie.jpg",
+      "description": "10 mini bombones de cera de soja aromatizados"
+    },
+    {
+      "id": 14,
+      "name": "Saignon",
+      "price": 60950,
+      "image": "img/saignon.jpg",
+      "description": "Velón suspendido en envase reutilizable de vidrio con 500 gr de cera de soja aromatizada. Medidas: 17 cm de diámetro x 15cm de alto"
+    },
+    {
+      "id": 15,
+      "name": "Apagavela fleur",
+      "price": 2800,
+      "image": "img/apagavela-fleur.jpg",
+      "description": "Apagavela color plata con mango labrado y dije colgante. Medidas: 7cm de largo y aprox 1cm el capuchon. Diferentes modelos"
+    },
+    {
+      "id": 16,
+      "name": "Lottie grande",
+      "price": 18170,
+      "image": "img/lottie-grande.jpg",
+      "description": "Cuenco de 16cm de diámetro reutilizable de madera con 400 gr de cera de soja aromatizada"
+    },
+    {
+      "id": 17,
+      "name": "Vela Caroline",
+      "price": 8740,
+      "image": "img/vela-caroline.jpg",
+      "description": "Vela de cera de soja aromatizada x 3"
+    },
+    {
+      "id": 18,
+      "name": "Jolie con flor",
+      "price": 8970,
+      "image": "img/jolie-con-flor1.jpg",
+      "description": "Cuenco reutilizable de madera con 150 gr de cera de soja aromatizada"
+    }
+  ],
+  "esencias_velas": [
+    "Coco",
+    "Jazmín",
+    "Lavanda",
+    "Limón",
+    "Sandia",
+    "Cherry",
+    "Mango & maracuya",
+    "Vainilla & caramelo",
+    "Azediña",
+    "Rosa",
+    "Café"
+  ],
+  "aromas": [
+    {
+      "id": 14,
+      "name": "Claire",
+      "price": 11730,
+      "image": "img/claire.jpg",
+      "description": "Spray textil de 250cc"
+    },
+    {
+      "id": 15,
+      "name": "Difusor Pauline",
+      "price": 18800,
+      "image": "img/difusor-pauline.jpg",
+      "description": "Envase reutilizable de vidrio con 250cc. Incluye seis varillas."
+    },
+    {
+      "id": 16,
+      "name": "Anais",
+      "price": 4700,
+      "image": "img/difusor-anais.jpg",
+      "description": "Envase de vidrio colgante con cordón. Ideal para auto o placard."
+    }
+  ],
+  "esencias_spray_difusores": [
+    "Naranja & pimienta",
+    "Hawai",
+    "Coniglio",
+    "Wanama",
+    "Peonias",
+    "Pomelo",
+    "Cítrico",
+    "Tilo & bamboo",
+    "Lavanda"
+  ],
+  "ceramica": [
+    {
+      "id": 17,
+      "name": "Florero Luisa",
+      "price": 16100,
+      "image": "img/florero-luisa.jpg",
+      "description": "Pieza de cerámica única realizada y pintada a mano. Medidas: 15 cm de alto x 11 cm de diámetro"
+    },
+    {
+      "id": 18,
+      "name": "Set Julieta",
+      "price": 22310,
+      "image": "img/set-julieta.jpg",
+      "description": "Piezas de cerámica únicas realizadas y pintadas a mano. Incluye: tazón y plato tostada. Medidas: Tazón: 11 cm diámetro x 8cm de alto, Plato: 16cm de largo x 12cm de ancho"
+    },
+    {
+      "id": 19,
+      "name": "Mini Florero Lea",
+      "price": 9200,
+      "image": "img/mini-florero-lea.jpg",
+      "description": "Pieza de cerámica única realizada y pintada a mano. Medidas: 12 cm de alto"
+    },
+    {
+      "id": 20,
+      "name": "Fanal Lucia",
+      "price": 13800,
+      "image": "img/fanal-lucia.jpg",
+      "description": "Piezas de cerámica únicas realizadas y pintadas a mano. Incluye: fanal y plato. Medidas: Fanal: 10cm de alto x 8cm de diámetro, Plato: 12 cm de diámetro"
+    },
+    {
+      "id": 21,
+      "name": "Florero Chloe",
+      "price": 20470,
+      "image": "img/florero-chloe.jpg",
+      "description": "Pieza de cerámica única realizada y pintada a mano. Medidas: 13 cm de alto x 13 cm de diámetro"
+    },
+    {
+      "id": 22,
+      "name": "Set de Mate Amelia",
+      "price": 35420,
+      "image": "img/set-mate-amelia.jpg",
+      "description": "Piezas de cerámica únicas realizadas y pintadas a mano. Incluye: mate, azucarera con tapa y bandeja. Medidas: Mate: 11 cm de alto, Azucarera: 9cm de alto x 9cm de diámetro, Bandeja: 22cm de diámetro"
+    },
+    {
+      "id": 23,
+      "name": "Set Sophie",
+      "price": 27600,
+      "image": "img/set-sophie.jpg",
+      "description": "Piezas de cerámica únicas realizadas y pintadas a mano. Incluye: taza y plato corazón. Medidas: Taza: 9 cm de diámetro x 11 de alto, Plato corazón: 17cm de largo x 21cm de ancho"
+    },
+    {
+      "id": 24,
+      "name": "Set Julieta",
+      "price": 22310,
+      "image": "img/set-julieta1.jpg",
+      "description": "Piezas de cerámica únicas realizadas y pintadas a mano. Incluye: tazón y plato tostada. Medidas: Tazón: 11 cm diámetro x 8cm de alto, Plato: 16cm de largo x 12cm de ancho"
+    }
+  ],
+  "textiles": [
+    {
+      "id": 24,
+      "name": "Paris",
+      "price": 65550,
+      "image": "img/cortina-marsella.jpg",
+      "description": "Cortina de baño confeccionada en 100% algodón con volados y puntillas. Medidas: 180cm x 180 cm. Opcional: lazos para atar al barral u ojales pasa ganchos. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para colgar. No incluye protector. Por medidas especiales comunicarse por WhatsApp o mensaje privado."
+    },
+    {
+      "id": 25,
+      "name": "Burdeos",
+      "price": 78550,
+      "image": "img/cortina-burdeos.jpg",
+      "description": "Cortina de baño confeccionada en 100% algodón con volados y puntillas. Medidas: 180cm x 180 cm. Opcional: lazos para atar al barral u ojales pasa ganchos. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para colgar. No incluye protector. Por medidas especiales comunicarse por WhatsApp o mensaje privado."
+    },
+    {
+      "id": 26,
+      "name": "Niza",
+      "price": 65550,
+      "image": "img/cortina-niza.jpg",
+      "description": "Cortina de baño confeccionada en 100% algodón con volados y puntillas. Medidas: 180cm x 180 cm. Opcional: lazos para atar al barral u ojales pasa ganchos. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para colgar. No incluye protector. Por medidas especiales comunicarse por WhatsApp o mensaje privado."
+    },
+    {
+      "id": 27,
+      "name": "Marsella",
+      "price": 71500,
+      "image": "img/cortina-marsella1.jpg",
+      "description": "Cortina de baño confeccionada en 100% algodón con volados y puntillas. Medidas: 180cm x 180 cm. Opcional: lazos para atar al barral u ojales pasa ganchos. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para colgar. No incluye protector. Por medidas especiales comunicarse por WhatsApp o mensaje privado."
+    }
+  ],
+  "accesorios": [
+    {
+      "id": 28,
+      "name": "Cubre Lavarropas Merci",
+      "price": 43000,
+      "image": "img/cubre-lavarropas-merci.jpg",
+      "description": "Funda para lavarropas confeccionado en una tela super resistente. Apto para lavarropas de carga frontal (6 y 8 kg). No obstruye su funcionamiento ni tablero. Medidas: 82cm de alto x 62cm de ancho x 62cm de profundidad. Por medidas espéciales comunicarse por WhatsApp o mensaje privado."
+    },
+    {
+      "id": 29,
+      "name": "Bolsita Organizadora Paix",
+      "price": 8000,
+      "image": "img/bolsita-organizadora-paix.jpg",
+      "description": "Bolsita confeccionada en 100% algodón con volados y puntillas. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para su uso. Medidas: 29cm de ancho x 24cm de largo."
+    },
+    {
+      "id": 30,
+      "name": "Bolsita Organizadora Liberte",
+      "price": 8000,
+      "image": "img/bolsita-organizadora-liberte.jpg",
+      "description": "Bolsita confeccionada en 100% algodón con volados y puntillas. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas, listas para su uso. Medidas: 23cm de ancho x 30cm de largo."
+    },
+    {
+      "id": 31,
+      "name": "Cuenco Pequeño Amour",
+      "price": 3500,
+      "image": "img/cuenco-pequeno-amour.jpg",
+      "description": "Cuenco confeccionado en 100% algodón con volados y puntillas. Llevan tela doble para mayor sostén. No encogen: son lavadas antes y después de su confección. Medidas: 13cm de diámetro x 12cm de alto."
+    },
+    {
+      "id": 32,
+      "name": "Cuenco Mediano Amour",
+      "price": 4500,
+      "image": "img/cuenco-pequeno-amour.jpg",
+      "description": "Cuenco confeccionado en 100% algodón con volados y puntillas. Llevan tela doble para mayor sostén. No encogen: son lavadas antes y después de su confección. Medidas: 15 cm de diámetro x 13cm de alto."
+    },
+    {
+      "id": 33,
+      "name": "Cuenco Grande Amour",
+      "price": 5500,
+      "image": "img/cuenco-pequeno-amour.jpg",
+      "description": "Cuenco confeccionado en 100% algodón con volados y puntillas. Llevan tela doble para mayor sostén. No encogen: son lavadas antes y después de su confección. Medidas: 17cm de diámetro x 14 de alto."
+    }
+  ],
+  "cubre_sommier": [
+    {
+      "id": 1,
+      "name": "Cubresomier Maison",
+      "image": "img/cubresomier-maison.jpg",
+      "description": "Cubresomier clásico confeccionado en algodón y su base en poliéster. Tiene una base plana que queda entre el colchón y el somier lo cual lo sujeta. Color crudo. Medida de alto: 30 cm.",
+      "sizes": [
+        {
+          "name": "Twin",
+          "price": 66500,
+          "dimensions": "1 M A x 2 M L"
+        },
+        {
+          "name": "King",
+          "price": 81300,
+          "dimensions": "1.80 M A x 2 M L"
+        },
+        {
+          "name": "Queen",
+          "price": 79900,
+          "dimensions": "1.60 M A x 2 M L"
+        },
+        {
+          "name": "1 Plaza",
+          "price": 62000,
+          "dimensions": "0.90 A x 1.90 L"
+        },
+        {
+          "name": "2 Plazas",
+          "price": 72000,
+          "dimensions": "1.40 x 1.90 M L"
+        },
+        {
+          "name": "Super King",
+          "price": 89000,
+          "dimensions": "2 M A x 2 M L"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cubresomier LUXE",
+      "image": "img/cubresomier-luxe.jpg",
+      "description": "Cubresomier con su volado confeccionado en gasa de algodón, terminado en puntilla y su base en poliéster. Color crudo. Medida de alto: 30 cm.",
+      "sizes": [
+        {
+          "name": "Twin",
+          "price": 86500,
+          "dimensions": "1 M A x 2 M L"
+        },
+        {
+          "name": "King",
+          "price": 101200,
+          "dimensions": "1.80 M A x 2 M L"
+        },
+        {
+          "name": "Queen",
+          "price": 99000,
+          "dimensions": "1.60 M A x 2 M L"
+        },
+        {
+          "name": "1 Plaza",
+          "price": 82000,
+          "dimensions": "0.90 A x 1.90 L"
+        },
+        {
+          "name": "2 Plazas",
+          "price": 92000,
+          "dimensions": "1.40 x 1.90 M L"
+        },
+        {
+          "name": "Super King",
+          "price": 109000,
+          "dimensions": "2 M A x 2 M L"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cubresomier TISSU",
+      "image": "img/cubresomier-tissu.jpg",
+      "description": "Cubresomier confeccionado en algodón con una tabla encontrada en ambos extremos reguladas con un moño y su base en poliéster. Color crudo. Medida de alto: 30 cm.",
+      "sizes": [
+        {
+          "name": "Twin",
+          "price": 76500,
+          "dimensions": "1 M A x 2 M L"
+        },
+        {
+          "name": "King",
+          "price": 91200,
+          "dimensions": "1.80 M A x 2 M L"
+        },
+        {
+          "name": "Queen",
+          "price": 89000,
+          "dimensions": "1.60 M A x 2 M L"
+        },
+        {
+          "name": "1 Plaza",
+          "price": 72000,
+          "dimensions": "0.90 A x 1.90 L"
+        },
+        {
+          "name": "2 Plazas",
+          "price": 82000,
+          "dimensions": "1.40 x 1.90 M L"
+        },
+        {
+          "name": "Super King",
+          "price": 99000,
+          "dimensions": "2 M A x 2 M L"
+        }
+      ]
+    }
+  ],
+  "cortinas_interior": [
+    {
+      "id": 1,
+      "name": "Cortinas de Gasa",
+      "image": "img/cortinas-gasa.jpg",
+      "description": "Cortinas confeccionadas en gasa de 100% algodón. Color crudo.",
+      "sizes": [
+        {
+          "name": "140cm x 210cm",
+          "price": 53000,
+          "dimensions": "140cm de ancho x 2.10m de alto"
+        },
+        {
+          "name": "140cm x 230cm",
+          "price": 58300,
+          "dimensions": "140cm de ancho x 2.30m de alto"
+        },
+        {
+          "name": "140cm x 250cm",
+          "price": 64600,
+          "dimensions": "140cm de ancho x 2.50m de alto"
+        },
+        {
+          "name": "2m x 2,10m",
+          "price": 62400,
+          "dimensions": "2m de ancho x 2,10m de alto"
+        },
+        {
+          "name": "2m x 2,30m",
+          "price": 68800,
+          "dimensions": "2m de ancho x 2,30m de alto"
+        },
+        {
+          "name": "2m x 2,50m",
+          "price": 75700,
+          "dimensions": "2m de ancho x 2,50m de alto"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Cortinas con Volado Triple 140m",
+      "image": "img/cortinas-volado-triple-140m.jpg",
+      "description": "Cortinas con faldón confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 1.40 ancho cada uno. Hechas a mano con mucho cuidado en los detalles. Pasa barral oculto o con tiras pasa barral. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "confection_time": "7 / 10 días",
+      "recommendations": [
+        "Medi el ancho de tu ventana y la altura desde el barral hasta el piso.",
+        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "¡Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos!"
+      ],
+      "sizes": [
+        {
+          "name": "1.40m x 2.10m",
+          "price": 91100,
+          "dimensions": "1.40m de ancho x 2.10m de alto"
+        },
+        {
+          "name": "1.40m x 2.30m",
+          "price": 100430,
+          "dimensions": "1.40m de ancho x 2.30m de alto"
+        },
+        {
+          "name": "1.40m x 2.50m",
+          "price": 110473,
+          "dimensions": "1.40m de ancho x 2.50m de alto"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cortinas con Volado Triple 2m",
+      "image": "img/cortinas-volado-triple-2m.jpg",
+      "description": "Cortinas con faldón confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 2m ancho cada uno. Hechas a mano con mucho cuidado en los detalles. Pasa barral oculto o con tiras pasa barral. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "confection_time": "7 / 10 días",
+      "recommendations": [
+        "Medi el ancho de tu ventana y la altura desde el barral hasta el piso.",
+        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "¡Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos!"
+      ],
+      "sizes": [
+        {
+          "name": "2m x 2.10m",
+          "price": 121352,
+          "dimensions": "2m de ancho x 2.10m de alto"
+        },
+        {
+          "name": "2m x 2.30m",
+          "price": 131184,
+          "dimensions": "2m de ancho x 2.30m de alto"
+        },
+        {
+          "name": "2m x 2.50m",
+          "price": 157420,
+          "dimensions": "2m de ancho x 2.50m de alto"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Cortinas para Riel de Gasa",
+      "image": "img/cortinas-riel-gasa.jpg",
+      "description": "Cortinas para riel confeccionadas en gasa de 100% algodón. Color crudo. Cabezal doble pellizcos (incluye los ganchos para colgar). Medidas: 2 paños de 0.75 metros de ancho x 2.10 de altura c/u. Sirven para cubrir un riel de 1.50 metros. Son livianas y tienen una hermosa caída. Visten tus ventanas y a la vez permiten el paso de la luz.",
+      "confection_time": "5 / 7 días hábiles",
+      "recommendations": [
+        "Medi tu riel de punta a punta + la altura desde el riel al piso.",
+        "Si el riel mide 1,50 y la altura desde el riel al piso es 2 m van a ir perfectas.",
+        "Si el riel es de 1,40 y la altura es 2 m, compralas y aclara en notas que tu riel mide 1,40.",
+        "¡Si tenes un riel más largo, la altura es mayor o tenes dudas escribirnos y te ayudamos!"
+      ],
+      "sizes": [
+        {
+          "name": "150cm x 210cm",
+          "price": 118000,
+          "dimensions": "150cm de ancho x 2.10m de alto"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Cortinas de Lienzo 140m",
+      "image": "img/cortinas-lienzo-140m.jpg",
+      "description": "Cortinas clásicas confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 1.40 de ancho. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "confection_time": "7 / 10 días",
+      "recommendations": [
+        "Medi el ancho de tu ventana y la altura desde el barral al piso.",
+        "Estas medidas se adaptan a ventanas de hasta 1.60 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos."
+      ],
+      "sizes": [
+        {
+          "name": "1.40m x 2.10m",
+          "price": 69000,
+          "dimensions": "1.40m de ancho x 2.10m de alto"
+        },
+        {
+          "name": "1.40m x 2.30m",
+          "price": 75900,
+          "dimensions": "1.40m de ancho x 2.30m de alto"
+        },
+        {
+          "name": "1.40m x 2.50m",
+          "price": 83490,
+          "dimensions": "1.40m de ancho x 2.50m de alto"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Cortinas de Lienzo 2m",
+      "image": "img/cortinas-lienzo-2m.jpg",
+      "description": "Cortinas clásicas confeccionadas en lienzo 100% algodón. El precio corresponde al juego de 2 paños de 2m de ancho. Hechas a mano con mucho cuidado en los detalles. No encogen: son lavadas antes y después de su confección. Se entregan planchadas y perfumadas listas para colgar.",
+      "confection_time": "7 / 10 días",
+      "recommendations": [
+        "Medi el ancho de tu ventana y la altura desde el barral al piso.",
+        "Estas medidas se adaptan a ventanas de hasta 2.20 m de ancho aprox. (para que tengan frunce y no queden tirantes).",
+        "Si necesitas info sobre confección a medida o tenes dudas, escribinos por instagram o whatsapp y te ayudamos."
+      ],
+      "sizes": [
+        {
+          "name": "2m x 2.10m",
+          "price": 89700,
+          "dimensions": "2m de ancho x 2.10m de alto"
+        },
+        {
+          "name": "2m x 2.30m",
+          "price": 107640,
+          "dimensions": "2m de ancho x 2.30m de alto"
+        },
+        {
+          "name": "2m x 2.50m",
+          "price": 129168,
+          "dimensions": "2m de ancho x 2.50m de alto"
+        }
+      ]
+    }
+  ],
+  "cortinas_gasa_info": {
+    "material": "100% algodón",
+    "color": "Crudo",
+    "tiempo_confeccion": "5 / 7 días hábiles",
+    "caracteristicas": [
+      "El precio corresponde al juego de 2 paños de 2 m de ancho",
+      "Elegir la altura de acuerdo a la medida desde el barral al piso y si queres súmale 10 o 15 cm para el arrastre",
+      "Las medidas son aproximadas, puede haber una diferencia de +/- 10 cm",
+      "Son livianas y tienen una hermosa caída. Visten tus ventanas y a la vez permiten el paso de la luz",
+      "Pasa barral oculto",
+      "Hechas a mano con mucho cuidado en los detalles",
+      "Son lavadas antes y después de su confección",
+      "Se entregan planchadas y perfumadas listas para colgar"
+    ],
+    "recomendaciones": [
+      "Medí el ancho de tu ventana y la altura desde el barral al piso",
+      "Estas medidas se adaptan a ventanas de hasta 2.40 m de ancho aprox. (para que tengan frunce y no queden tirantes)"
+    ]
+  },
+  "manteles": [
+    {
+      "id": "man001",
+      "name": "Mantel Utopie",
+      "description": "Mantel confeccionado en lienzo, con volados doble en el mismo género y gasa. Color crudo. Hecho a mano con mucho cuidado en los detalles. No encoge: todos nuestros manteles son lavados antes y después de su confección. Se entregan planchados y perfumados listos para poner en tu mesa.",
+      "image": "img/utopie.jpg",
+      "sizes": [
+        { "name": "Cuadrado 150x150m", "price": 42760 },
+        { "name": "Cuadrado 180x180m", "price": 54740 },
+        { "name": "Cuadrado 2x2m", "price": 67920 },
+        { "name": "Redondo 150m diámetro", "price": 42760 },
+        { "name": "Redondo 180m diámetro", "price": 54740 },
+        { "name": "Rectangular 150x180m", "price": 50160 },
+        { "name": "Rectangular 150x2m", "price": 54740 },
+        { "name": "Rectangular 150x250m", "price": 61600 },
+        { "name": "Rectangular 150x3m", "price": 70730 }
+      ]
+    },
+    {
+      "id": "man002",
+      "name": "Mantel Espoir",
+      "description": "Mantel confeccionado en lienzo y volados en gasa. Hecho a mano con mucho cuidado en los detalles. No encoge: todos nuestros manteles son lavados antes y después de su confección. Se entregan planchados y perfumados listos para poner en tu mesa.",
+      "image": "img/espoir.jpg",
+      "sizes": [
+        { "name": "Cuadrado 150x150m", "price": 41480 },
+        { "name": "Cuadrado 180x180m", "price": 53100 },
+        { "name": "Cuadrado 2x2m", "price": 65890 },
+        { "name": "Redondo 150m diámetro", "price": 41480 },
+        { "name": "Redondo 180m diámetro", "price": 53100 },
+        { "name": "Rectangular 150x180m", "price": 48700 },
+        { "name": "Rectangular 150x2m", "price": 53100 },
+        { "name": "Rectangular 150x250m", "price": 59800 },
+        { "name": "Rectangular 150x3m", "price": 68650 }
+      ]
+    }
+  ],
+  "almohadones": [
+    {
+      "id": "alm001",
+      "name": "Funda de Almohadón Bonjour",
+      "description": "Funda de almohadón de 45 x 45 cm. Tiene volados en gasa y detalles en lentejuelas. Es desmontable. Lleva abrojo en la parte de atrás. Color crudo. *No incluye el relleno",
+      "price": 15510,
+      "image": "img/bonjour.jpg"
+    },
+    {
+      "id": "alm002",
+      "name": "Funda de Almohadón Oui",
+      "description": "Funda de almohadón de 45 x 45 cm. Tiene volados en gasa y detalles en lentejuelas. Es desmontable. Lleva abrojo en la parte de atrás. Color crudo. *No incluye el relleno",
+      "price": 17710,
+      "image": "img/oui.jpg"
+    },
+    {
+      "id": "alm003",
+      "name": "Funda de Almohadón De Rien",
+      "description": "Funda de almohadón de 45 x 45 cm. Funda de almohadón clásica. Es desmontable. Lleva abrojo en la parte de atrás. Color crudo. *No incluye el relleno",
+      "price": 13400,
+      "image": "img/de-rien.jpg"
+    },
+    {
+      "id": "alm004",
+      "name": "Funda de Almohadón Etoile",
+      "description": "Funda almohadón 50 x 50 cm. Funda clásica, con puntilla de borlas alrededor. Es desmontable. Lleva abrojo en la parte de atrás. Color crudo. *No incluye el relleno.",
+      "price": 17000,
+      "image": "img/etoile.jpg"
+    }
+  ],
+  "caminos_de_mesa": [
+    {
+      "id": "cdm001",
+      "name": "Camino de Mesa Bordado",
+      "description": "Elegante camino de mesa con delicados bordados florales, perfecto para ocasiones especiales.",
+      "price": 3800,
+      "image": "img/caminos-de-mesa/bordado-floral.jpg"
+    },
+    {
+      "id": "cdm002",
+      "name": "Camino de Mesa de Lino Natural",
+      "description": "Camino de mesa de lino natural con bordes deshilachados para un look rústico y sofisticado.",
+      "price": 3500,
+      "image": "img/lino-natural.jpg"
+    },
+    {
+      "id": "cdm003",
+      "name": "Camino de Mesa Estampado Geométrico",
+      "description": "Moderno camino de mesa con estampado geométrico en tonos neutros, ideal para mesas contemporáneas.",
+      "price": 3200,
+      "image": "img/caminos-de-mesa/geometrico.jpg"
+    }
+  ],
+  "box": [
+    {
+      "id": "box001",
+      "name": "Box 1: Textil + Aroma + Vela",
+      "description": "Caminito de mesa + Spray textil + Vela Jolie + Apagavela",
+      "price": 34000,
+      "image": "img/box/box1.jpg"
+    },
+    {
+      "id": "box002",
+      "name": "Box 2: Textil + Aroma + Vela",
+      "description": "Caminito de mesa + Difusor + Vela Vitre + Apagavela",
+      "price": 39800,
+      "image": "img/box/box2.jpg"
+    },
+    {
+      "id": "box003",
+      "name": "Box 3: Textil + Aroma + Cerámica",
+      "description": "Caminito de mesa + Difusor + Florerito Lea",
+      "price": 34500,
+      "image": "img/box/box3.jpg"
+    },
+    {
+      "id": "box004",
+      "name": "Box 4: Textil + Aroma + Vela",
+      "description": "Caminito de mesa + Difusor + Vela Selene + Apagavela",
+      "price": 33250,
+      "image": "img/box/box4.jpg"
+    },
+    {
+      "id": "box005",
+      "name": "Box 5: Textil + Aroma + Vela",
+      "description": "Caminito de mesa + Difusor + Vela Lottie Mediano + Apagavela",
+      "price": 37600,
+      "image": "img/box/box5.jpg"
+    }
+  ]
+}
