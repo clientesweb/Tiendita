@@ -45,6 +45,7 @@ async function loadProducts() {
     products = await response.json();
     console.log('Productos cargados:', products);
     renderProducts();
+    initializeProductSliders(); // Añade esta línea
   } catch (error) {
     console.error('Error al cargar los productos:', error);
   } finally {
@@ -77,7 +78,7 @@ function renderProducts() {
     if (container && products[category]) {
       container.innerHTML = `<div class="product-slider flex overflow-x-auto space-x-4 pb-4">
         ${products[category].map(product => `
-          <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative">
+          <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative snap-start">
             <div class="p-4">
               <div class="relative mb-4 aspect-square">
                 <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
@@ -947,3 +948,4 @@ ${text}`);
 });
 
 console.log("Script loaded successfully!");
+
