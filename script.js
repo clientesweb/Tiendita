@@ -45,7 +45,6 @@ async function loadProducts() {
     products = await response.json();
     console.log('Productos cargados:', products);
     renderProducts();
-    initializeProductSliders(); // Añade esta línea
   } catch (error) {
     console.error('Error al cargar los productos:', error);
   } finally {
@@ -76,30 +75,27 @@ function renderProducts() {
   categories.forEach(category => {
     const container = productContainers[category];
     if (container && products[category]) {
-      container.innerHTML = `<div class="product-slider flex overflow-x-auto space-x-4 pb-4">
-        ${products[category].map(product => `
-          <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative snap-start">
-            <div class="p-4">
-              <div class="relative mb-4 aspect-square">
-                <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
-                  style="background-color: #D4C098; color: #848071;">
-                  10% OFF
-                </div>
-                <img src="${product.images[0]}" alt="${product.name}" class="object-contain w-full h-full">
+      container.innerHTML = products[category].map(product => `
+        <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative">
+          <div class="p-4">
+            <div class="relative mb-4 aspect-square">
+              <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
+                style="background-color: #D4C098; color: #848071;">
+                10% OFF
               </div>
-              <h3 class="text-sm font-medium line-clamp-2 font-serif">${product.name}</h3>
-              ${renderProductPrice(product, category)}
-              ${renderProductOptions(product, category)}
-              <button class="w-full mt-2 bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors" onclick="openProductModal('${product.id}', '${category}')">
-                Ver detalles
-              </button>
+              <img src="${product.images[0]}" alt="${product.name}" class="object-contain w-full h-full">
             </div>
+            <h3 class="text-sm font-medium line-clamp-2 font-serif">${product.name}</h3>
+            ${renderProductPrice(product, category)}
+            ${renderProductOptions(product, category)}
+            <button class="w-full mt-2 bg-primary text-white py-2 px-4 rounded hover:bg-primary-dark transition-colors" onclick="openProductModal('${product.id}', '${category}')">
+              Ver detalles
+            </button>
           </div>
-        `).join('')}
-      </div>`;
+        </div>
+      `).join('');
     }
   });
-  initializeProductSliders();
 }
 
 function renderProductPrice(product, category) {
@@ -216,8 +212,21 @@ function openProductModal(productId, category) {
   modalContent.innerHTML = `
     <div class="flex flex-col md:flex-row md:space-x-6">
       <div class="md:w-1/2">
-        <img src="${product.images[0]}" alt="${product.name}" class="w-full h-auto object-contain rounded-lg shadow-md">
-        ${product.images[1] ? `<img src="${product.images[1]}" alt="${product.name}" class="w-full h-auto object-contain rounded-lg shadow-md mt-4">` : ''}
+        <div class="relative">
+          <div class="flex overflow-x-auto snap-x snap-mandatory" id="imageSlider">
+            ${product.images.map((image, index) => `
+              <img src="${image}" alt="${product.name}" class="w-full h-auto object-contain rounded-lg shadow-md flex-shrink-0 snap-center">
+            `).join('')}
+          </div>
+          ${product.images.length > 1 ? `
+            <button class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2" onclick="changeSlide(-1)">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2" onclick="changeSlide(1)">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          ` : ''}
+        </div>
       </div>
       <div class="md:w-1/2 mt-4 md:mt-0 flex flex-col justify-between">
         <div>
@@ -246,6 +255,15 @@ function openProductModal(productId, category) {
 
   modal.classList.remove('hidden');
   console.log('Modal mostrado');
+}
+
+function changeSlide(direction) {
+  const slider = document.getElementById('imageSlider');
+  const scrollAmount = slider.clientWidth;
+  slider.scrollBy({
+    left: direction * scrollAmount,
+    behavior: 'smooth'
+  });
 }
 
 function closeProductModal() {
@@ -592,7 +610,7 @@ ALIAS: MON.AMOUR.TEXTIL
 CUIT/CUIL: 27-37092938-1
     `.trim();
     navigator.clipboard.writeText(bankDetails).then(() => {
-      this.textContent ='Datos copiados';
+      this.textContent = 'Datos copiados';
       setTimeout(() => {
         this.textContent = 'Copiar datos bancarios';
       }, 2000);
@@ -713,61 +731,6 @@ function showAdSlide(index) {
 function nextAdSlide() {
   currentAdSlide = (currentAdSlide + 1) % adSlides.length;
   showAdSlide(currentAdSlide);
-}
-
-function initializeProductSliders() {
-  const sliders = document.querySelectorAll('.product-slider');
-  sliders.forEach(slider => {
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    // Touch events for mobile
-    slider.addEventListener('touchstart', (e) => {
-      isDown = true;
-      slider.classList.add('active');
-      startX = e.touches[0].pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('touchend', () => {
-      isDown = false;
-      slider.classList.remove('active');
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.touches[0].pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  });
 }
 
 // Event Listeners
@@ -912,7 +875,6 @@ ${text}`);
   });
 
   loadProducts();
-  initializeProductSliders();
   updateBanner();
   setInterval(updateBanner, 5000);
 
