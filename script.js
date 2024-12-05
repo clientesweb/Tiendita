@@ -32,7 +32,6 @@ const productContainers = {
   accesorios: document.getElementById('accesoriosContainer'),
   cubre_sommier: document.getElementById('cubre_sommierContainer'),
   cortinas_interior: document.getElementById('cortinas_interiorContainer'),
-  cortinas_gasa: document.getElementById('cortinas_gasaContainer'),
   almohadones: document.getElementById('almohadonesContainer'),
   manteles: document.getElementById('mantelesContainer'),
   box: document.getElementById('boxContainer')
@@ -900,16 +899,6 @@ ${text}`);
       const content = this.nextElementSibling;
       const icon = this.querySelector('.accordion-icon');
       
-      content.classList.toggle('hidden');
-      icon.classList.toggle('rotate-180');
-    });
-  });
-
-  // Remove preloader
-  document.getElementById('preloader').style.display = 'none';
-});
-
-console.log("Script loaded successfully!");
       content.classList.toggle('hidden');
       icon.classList.toggle('rotate-180');
     });
