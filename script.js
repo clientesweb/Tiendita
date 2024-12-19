@@ -5,6 +5,7 @@ let currentBanner = 0;
 let currentHeroImage = 0;
 let shippingCost = 0;
 let shippingOptions = {};
+let appliedDiscount = 0;
 
 const bannerMessages = [
   "¡Nueva colección de textiles disponible!",
@@ -17,6 +18,8 @@ const heroImages = [
   "img/hero2.png",
   "img/hero3.png"
 ];
+
+const validDiscountCodes = ['CPS10', 'ARQ10', 'SAD10', 'PSI10'];
 
 // DOM Elements
 const bannerMessageEl = document.getElementById('bannerMessage');
@@ -36,15 +39,6 @@ const productContainers = {
   manteles: document.getElementById('mantelesContainer'),
   box: document.getElementById('boxContainer')
 };
-
-// Discount codes
-const discountCodes = {
-  'CPS10': 0.1,
-  'ARQ10': 0.1,
-  'SAD10': 0.1,
-  'PSI10': 0.1
-};
-let appliedDiscountCode = null;
 
 // Functions
 async function loadProducts() {
@@ -354,12 +348,8 @@ function updateCartUI() {
     shippingCost = calculateShippingCost(selectedShipping.price, totalItems);
   }
   
-  let discount = 0;
-  if (appliedDiscountCode) {
-    discount = subtotal * discountCodes[appliedDiscountCode];
-  }
-  
-  const total = subtotal + shippingCost - discount;
+  const discountAmount = subtotal * appliedDiscount;
+  const total = subtotal + shippingCost - discountAmount;
 
   cartItemCountEl.textContent = totalItems;
   cartItemCountEl.classList.toggle('hidden', totalItems === 0);
@@ -387,16 +377,18 @@ function updateCartUI() {
   cartTotalEl.textContent = formatPrice(total);
   
   // Update discount display
-  const discountEl = document.getElementById('discountAmount');
-  if (discountEl) {
-    discountEl.textContent = formatPrice(discount);
-    discountEl.parentElement.classList.toggle('hidden', discount === 0);
+  const discountMessageEl = document.getElementById('discountMessage');
+  const discountAmountEl = document.getElementById('discountAmount');
+  if (appliedDiscount > 0) {
+    discountMessageEl.classList.remove('hidden');
+    discountAmountEl.textContent = formatPrice(discountAmount);
+  } else {
+    discountMessageEl.classList.add('hidden');
   }
   
   // Update shipping cost display
   document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
   updateTotal();
-  updateTransferModal();
 }
 
 function formatPrice(price) {
@@ -473,16 +465,24 @@ function updateTotal() {
     shippingCost = calculateShippingCost(selectedShipping.price, itemCount);
   }
 
-  let discount = 0;
-  if (appliedDiscountCode) {
-    discount = subtotal * discountCodes[appliedDiscountCode];
-  }
+  const discountAmount = subtotal * appliedDiscount;
+  const total = subtotal + shippingCost - discountAmount;
 
-  const total = subtotal + shippingCost - discount;
   document.getElementById('cartTotal').textContent = formatPrice(total);
-  document.getElementById('discountedTotal').textContent = formatPrice(total);
   document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
   updateTransferModal();
+}
+
+function applyDiscount() {
+  const discountCode = document.getElementById('discountCode').value.toUpperCase();
+  if (validDiscountCodes.includes(discountCode)) {
+    appliedDiscount = 0.1; // 10% discount
+    alert('Código de descuento aplicado exitosamente.');
+  } else {
+    appliedDiscount = 0;
+    alert('Código de descuento inválido.');
+  }
+  updateCartUI();
 }
 
 function updateAdvertisingBanner() {
@@ -492,13 +492,13 @@ function updateAdvertisingBanner() {
   let message, backgroundImage;
 
   if (currentHour >= 6 && currentHour < 12) {
-    message = "¡Oferta matutina! Usa el código CPS10 para obtener un 10% de descuento";
+    message = "¡Oferta matutina! 10% de descuento en todas las velas aromáticas";
     backgroundImage = "url('img/mañana.png')";
   } else if (currentHour >= 12 && currentHour < 18) {
-    message = "¡Especial de la tarde! Usa el código ARQ10 para obtener un 10% de descuento";
+    message = "¡Especial de la tarde! Compra un textil y lleva el segundo a mitad de precio";
     backgroundImage = "url('img/tarde.png')";
   } else {
-    message = "¡Oferta nocturna! Usa el código SAD10 para obtener un 10% de descuento";
+    message = "¡Oferta nocturna! Envío gratis en compras superiores a $150000";
     backgroundImage = "url('img/noche.png')";
   }
 
@@ -533,10 +533,7 @@ function validateForm() {
 function updateTransferModal() {
   const modalContent = document.getElementById('bankDetailsModal');
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  let discount = 0;
-  if (appliedDiscountCode) {
-    discount = subtotal * discountCodes[appliedDiscountCode];
-  }
+  const discount = subtotal * 0.1; // 10% discount for bank transfer
   const total = subtotal + shippingCost - discount;
 
   let content = `
@@ -570,18 +567,10 @@ function updateTransferModal() {
           <span>Costo de envío:</span>
           <span>${formatPrice(shippingCost)}</span>
         </div>
-  `;
-
-  if (discount > 0) {
-    content += `
         <div class="flex justify-between text-lg text-green-600">
-          <span>Descuento (${appliedDiscountCode}):</span>
+          <span>Descuento por transferencia (10%):</span>
           <span>-${formatPrice(discount)}</span>
         </div>
-    `;
-  }
-
-  content += `
         <div class="flex justify-between font-bold text-xl text-primary">
           <span>Total:</span>
           <span>${formatPrice(total)}</span>
