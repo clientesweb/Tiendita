@@ -375,6 +375,7 @@ function updateCartUI() {
   `).join('');
 
   document.getElementById('cartSubtotal').textContent = formatPrice(subtotal);
+  document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
   cartTotalEl.textContent = formatPrice(total);
   
   // Update discount display
@@ -386,7 +387,7 @@ function updateCartUI() {
   } else {
     discountMessageEl.classList.add('hidden');
   }
-  
+}
   // Update shipping cost display
   document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
 }
@@ -783,6 +784,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   document.getElementById('closeProductModal').addEventListener('click', closeProductModal);
+
+document.getElementById('applyDiscount').addEventListener('click', applyDiscount);
 
   document.getElementById('whatsappButton').addEventListener('click', () => {
     window.open('https://wa.me/5493534786106', '_blank');
