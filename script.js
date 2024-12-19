@@ -605,8 +605,7 @@ function updateTransferModal() {
         </div>
         <button id="downloadPurchaseDetails" class="mt-6 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary-dark transition-colors">
           Descargar detalles de la compra
-        </button>
-      </div>
+        </button>      </div>
     </div>
   `;
 
@@ -655,8 +654,10 @@ CUIT/CUIL: 27-37092938-1
 function generatePurchaseDetails() {
   try {
     const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-    const discount = subtotal * 0.1; // 10% discount
-    const total = subtotal + shippingCost - discount;
+    const promoDiscountAmount = subtotal * appliedDiscount;
+    const transferDiscount = subtotal * 0.1; // 10% discount for bank transfer
+    const totalDiscount = promoDiscountAmount + transferDiscount;
+    const total = subtotal + shippingCost - totalDiscount;
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF();
@@ -699,7 +700,11 @@ function generatePurchaseDetails() {
     doc.text(`Costo de envío: ${formatPrice(shippingCost)}`, 10, yPos);
     yPos += 7;
     doc.setTextColor(0, 128, 0); // Green color for discount
-    doc.text(`Descuento (10%): -${formatPrice(discount)}`, 10, yPos);
+    if (appliedDiscount > 0) {
+      doc.text(`Descuento promocional (${appliedDiscount * 100}%): -${formatPrice(promoDiscountAmount)}`, 10, yPos);
+      yPos += 7;
+    }
+    doc.text(`Descuento por transferencia (10%): -${formatPrice(transferDiscount)}`, 10, yPos);
     yPos += 7;
     doc.setTextColor(33, 150, 243); // Primary color for total
     doc.setFontSize(14);
@@ -927,3 +932,4 @@ ${text}`);
 });
 
 console.log("Script loaded successfully!");
+
