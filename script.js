@@ -37,6 +37,15 @@ const productContainers = {
   box: document.getElementById('boxContainer')
 };
 
+// Discount codes
+const discountCodes = {
+  'CPS10': 0.1,
+  'ARQ10': 0.1,
+  'SAD10': 0.1,
+  'PSI10': 0.1
+};
+let appliedDiscountCode = null;
+
 // Functions
 async function loadProducts() {
   try {
@@ -78,10 +87,6 @@ function renderProducts() {
         <div class="product-card flex-shrink-0 w-64 bg-white rounded-lg shadow-md overflow-hidden relative">
           <div class="p-4">
             <div class="relative mb-4 aspect-square">
-              <div class="absolute top-2 right-2 px-2 py-1 rounded-full text-xs font-bold z-10"
-                style="background-color: #D4C098; color: #848071;">
-                10% OFF
-              </div>
               <img src="${product.images[0]}" alt="${product.name}" class="object-contain w-full h-full">
             </div>
             <h3 class="text-sm font-medium line-clamp-2 font-serif">${product.name}</h3>
@@ -103,11 +108,9 @@ function renderProductPrice(product, category) {
     return `<p class="mt-2 text-sm text-gray-500">Desde $${minPrice.toLocaleString()}</p>`;
   } else {
     const price = product.price;
-    const discountedPrice = price * 0.9;
     return `
       <p class="mt-2 text-lg font-bold">
-        <span class="line-through text-gray-500">$${price.toLocaleString()}</span>
-        $${discountedPrice.toLocaleString()}
+        $${price.toLocaleString()}
       </p>
     `;
   }
@@ -174,11 +177,9 @@ function openProductModal(productId, category) {
     priceDisplay = `<p class="text-2xl font-bold mb-4">Desde $${Math.min(...product.sizes.map(s => s.price)).toLocaleString()}</p>`;
   } else {
     const price = product.price;
-    const discountedPrice = price * 0.9;
     priceDisplay = `
       <p class="text-2xl font-bold mb-4">
-        <span class="line-through text-gray-500 mr-2">$${price.toLocaleString()}</span>
-        <span class="text-primary">$${discountedPrice.toLocaleString()}</span>
+        $${price.toLocaleString()}
       </p>
     `;
   }
@@ -295,9 +296,9 @@ function addToCart(productId, category) {
       alert('Por favor, selecciona una medida.');
       return;
     }
-    price = selectedSize.price * 0.9; // Apply 10% discount
+    price = selectedSize.price;
   } else {
-    price = product.price * 0.9; // Apply 10% discount
+    price = product.price;
   }
 
   if ((category === 'velas' || category === 'aromas') && !scent) {
@@ -353,7 +354,12 @@ function updateCartUI() {
     shippingCost = calculateShippingCost(selectedShipping.price, totalItems);
   }
   
-  const total = subtotal + shippingCost;
+  let discount = 0;
+  if (appliedDiscountCode) {
+    discount = subtotal * discountCodes[appliedDiscountCode];
+  }
+  
+  const total = subtotal + shippingCost - discount;
 
   cartItemCountEl.textContent = totalItems;
   cartItemCountEl.classList.toggle('hidden', totalItems === 0);
@@ -379,7 +385,13 @@ function updateCartUI() {
   `).join('');
 
   cartTotalEl.textContent = formatPrice(total);
-  document.getElementById('discountedTotal').textContent = formatPrice(total * 0.9);
+  
+  // Update discount display
+  const discountEl = document.getElementById('discountAmount');
+  if (discountEl) {
+    discountEl.textContent = formatPrice(discount);
+    discountEl.parentElement.classList.toggle('hidden', discount === 0);
+  }
   
   // Update shipping cost display
   document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
@@ -461,9 +473,14 @@ function updateTotal() {
     shippingCost = calculateShippingCost(selectedShipping.price, itemCount);
   }
 
-  const total = subtotal + shippingCost;
+  let discount = 0;
+  if (appliedDiscountCode) {
+    discount = subtotal * discountCodes[appliedDiscountCode];
+  }
+
+  const total = subtotal + shippingCost - discount;
   document.getElementById('cartTotal').textContent = formatPrice(total);
-  document.getElementById('discountedTotal').textContent = formatPrice(total * 0.9);
+  document.getElementById('discountedTotal').textContent = formatPrice(total);
   document.getElementById('shippingCost').textContent = formatPrice(shippingCost);
   updateTransferModal();
 }
@@ -475,13 +492,13 @@ function updateAdvertisingBanner() {
   let message, backgroundImage;
 
   if (currentHour >= 6 && currentHour < 12) {
-    message = "¡Oferta matutina! 10% de descuento en todas las velas aromáticas";
+    message = "¡Oferta matutina! Usa el código CPS10 para obtener un 10% de descuento";
     backgroundImage = "url('img/mañana.png')";
   } else if (currentHour >= 12 && currentHour < 18) {
-    message = "¡Especial de la tarde! Compra un textil y lleva el segundo a mitad de precio";
+    message = "¡Especial de la tarde! Usa el código ARQ10 para obtener un 10% de descuento";
     backgroundImage = "url('img/tarde.png')";
   } else {
-    message = "¡Oferta nocturna! Envío gratis en compras superiores a $150000";
+    message = "¡Oferta nocturna! Usa el código SAD10 para obtener un 10% de descuento";
     backgroundImage = "url('img/noche.png')";
   }
 
@@ -516,7 +533,10 @@ function validateForm() {
 function updateTransferModal() {
   const modalContent = document.getElementById('bankDetailsModal');
   const subtotal = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-  const discount = subtotal * 0.1; // 10% discount
+  let discount = 0;
+  if (appliedDiscountCode) {
+    discount = subtotal * discountCodes[appliedDiscountCode];
+  }
   const total = subtotal + shippingCost - discount;
 
   let content = `
@@ -550,10 +570,18 @@ function updateTransferModal() {
           <span>Costo de envío:</span>
           <span>${formatPrice(shippingCost)}</span>
         </div>
+  `;
+
+  if (discount > 0) {
+    content += `
         <div class="flex justify-between text-lg text-green-600">
-          <span>Descuento (10%):</span>
+          <span>Descuento (${appliedDiscountCode}):</span>
           <span>-${formatPrice(discount)}</span>
         </div>
+    `;
+  }
+
+  content += `
         <div class="flex justify-between font-bold text-xl text-primary">
           <span>Total:</span>
           <span>${formatPrice(total)}</span>
