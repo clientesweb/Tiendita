@@ -271,6 +271,18 @@ function updateQuantity(change) {
   quantityInput.value = newQuantity;
 }
 
+function applyDiscount() {
+  const discountCode = document.getElementById('discountCode').value.toUpperCase();
+  if (validDiscountCodes.includes(discountCode)) {
+    appliedDiscount = 0.1; // 10% discount
+    alert('Código de descuento aplicado exitosamente.');
+  } else {
+    appliedDiscount = 0;
+    alert('Código de descuento inválido.');
+  }
+  updateCartUI();
+}
+
 function addToCart(productId, category) {
   const product = products[category].find(p => p.id == productId);
   if (!product) return;
